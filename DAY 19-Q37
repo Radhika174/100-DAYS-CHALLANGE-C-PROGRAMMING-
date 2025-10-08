@@ -14,32 +14,7 @@ Output 2:
 21
 
 */
-/*#include <stdio.h>
-int main() 
-{
-    int a, b;
-    int max;
-    printf("Enter two positive integers: ");
-    scanf("%d %d", &a, &b);
-    if(a>b)
-    max=a;
-    else
-    max=b;
-    int i=2;
-    int LCM;
-    while(i<=max)
-    {
-        if(i%a==0&&i%b==0)
-        {
-            LCM=i;
-                printf("LCM=%d",LCM);
-        break;
-        }
-        i++;
-    }
-   // printf("LCM=%d",LCM);
-    return 0;
-}*/
+      
 #include <stdio.h>
 int main()
 {
