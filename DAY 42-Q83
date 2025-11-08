@@ -1,0 +1,37 @@
+/*Q83: Count vowels and consonants in a string.
+
+Sample Test Cases:
+Input 1:
+hello
+Output 1:
+Vowels=2, Consonants=3
+
+*/
+#include <stdio.h>
+#include <string.h>
+int main() 
+{
+    char strg[100];
+    printf("Enter string");
+    scanf("%[^\n]",strg);
+    char ch;
+    int v=0;
+    int c=0;
+    for(int i=0;i<strlen(strg);i++)
+    {
+      ch=strg[i];
+      if((ch>='A' && ch<='Z') || (ch>='a' && ch<='z'))
+      {
+          if(ch=='A' || ch=='E' || ch=='I' || ch== 'O' || ch=='U' || ch=='a' || ch=='e' || ch=='i' || ch== 'o' || ch=='u')
+          v++;
+          else
+          c++;
+      }
+      
+    }
+    printf("Vowels=%d",v);
+    printf("\nConsonants=%d",c);
+    
+
+    return 0;
+}
