@@ -1,0 +1,32 @@
+/*Q84: Convert a lowercase string to uppercase without using built-in functions
+
+Sample Test Cases:
+Input 1:
+hello
+Output 1:
+HELLO
+
+*/
+#include <stdio.h>
+#include <string.h>
+int main() 
+{
+    char strg[100];
+    printf("Enter string");
+    scanf("%[^\n]",strg);
+    char ch;
+    char news[100];
+    for(int i=0;i<strlen(strg);i++)
+    {
+      ch=strg[i];
+      if(ch>='A' && ch<='Z')
+      ch=ch+32; 
+      else
+      ch=ch-32;
+      news[i]=ch;
+    }
+    printf("%s",news);
+    
+  
+    return 0;
+}
