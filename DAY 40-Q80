@@ -1,0 +1,77 @@
+/*Q80: Multiply two matrices.
+
+Sample Test Cases:
+Input 1:
+2 3
+1 2 3
+4 5 6
+3 2
+7 8
+9 10
+11 12
+Output 1:
+58 64
+139 154
+
+*/
+
+#include <stdio.h>
+
+int main() {
+    int r1,r2,c1,c2;
+    printf("enter rows and coloumns\n");
+    scanf("%d%d", &r1,&c1);
+    int arr1[r1][c1];
+     printf("enter rows and coloumns\n");
+    scanf("%d%d", &r2,&c2);
+    int arr2[r2][c2];
+    printf("enter elements\n");
+    for(int i=0;i<r1;i++)
+{
+    for(int j=0;j<c1;j++)
+    {
+       // printf("arr[%d][%d]=", i,j);
+        scanf("%d",&arr1[i][j]);
+    }
+}
+printf("enter elements\n");
+ for(int i=0;i<r2;i++)
+{
+    for(int j=0;j<c2;j++)
+    {
+        printf("arr[%d][%d]=", i,j);
+        scanf("%d",&arr2[i][j]);
+    }
+}
+int prod[r1][c2];
+for(int i=0;i<r1;i++)
+{
+    for(int j=0;j<c2;j++)
+    {
+        prod[i][j]=0;
+    }
+}
+for(int i=0;i<r1;i++)
+{
+    for (int j =0; j <c2; j++)
+{
+            for (int k = 0; k < c1; k++) 
+            {
+                prod[i][j] += arr1[i][k] * arr2[k][j];
+            }
+        }
+}
+
+    printf("\nProduct of the two matrices:\n");
+    for (int i = 0; i < r1; i++) 
+    {
+        for (int j = 0; j < c2; j++) 
+        {
+            printf("%d ", prod[i][j]);
+        }
+        printf("\n");
+    }
+
+
+    return 0;
+}
