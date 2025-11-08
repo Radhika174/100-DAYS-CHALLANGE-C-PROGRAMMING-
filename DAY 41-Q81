@@ -1,0 +1,32 @@
+/*Q81: Count characters in a string without using built-in length functions.
+
+Sample Test Cases:
+Input 1:
+Hello
+Output 1:
+5
+
+Input 2:
+ 
+Output 2:
+1
+
+*/
+#include <stdio.h>
+#include <string.h>
+int main() 
+{
+    char strg[100];
+    printf("Enter string");
+    scanf("%[^\n]",strg);
+    char ch;
+    int c=0;
+    for(int i=0;i<strlen(strg);i++)
+    {
+      ch=strg[i];
+      c++;
+    }
+    printf("Number of characters=%d",c);
+
+    return 0;
+}
