@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <ctype.h>  // For toupper()
+
+int main() {
+    FILE *inputFile, *outputFile;
+    char ch;
+
+    // Open input file in read mode
+    inputFile = fopen("input.txt", "r");
+    if (inputFile == NULL) {
+        printf("Error: input.txt not found!\n");
+        return 1;
+    }
+
+    // Open output file in write mode
+    outputFile = fopen("output.txt", "w");
+    if (outputFile == NULL) {
+        printf("Error: Could not create output.txt\n");
+        fclose(inputFile);
+        return 1;
+    }
+
+    // Read each character from input file
+    while ((ch = fgetc(inputFile)) != EOF) {
+        // Convert lowercase to uppercase
+        ch = toupper((unsigned char)ch);
+        fputc(ch, outputFile);  // Write to output file
+    }
+
+    fclose(inputFile);
+    fclose(outputFile);
+
+    printf("File converted to uppercase successfully!\n");
+
+    return 0;
+}
