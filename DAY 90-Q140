@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <string.h>
+
+enum Gender {
+    MALE,
+    FEMALE,
+    OTHER
+};
+
+struct Person {
+    char name[50];
+    enum Gender gender;
+};
+
+int main() {
+    struct Person p;
+    char input[10];
+
+    // Input gender as string
+    scanf("%s", input);
+
+    // Map input to enum
+    if (strcmp(input, "MALE") == 0)
+        p.gender = MALE;
+    else if (strcmp(input, "FEMALE") == 0)
+        p.gender
