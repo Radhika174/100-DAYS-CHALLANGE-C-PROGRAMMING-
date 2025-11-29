@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+enum Colors {
+    RED,
+    YELLOW,
+    GREEN
+};
+
+int main() {
+    enum Colors color;
+
+    // Array of names matching enum order
+    const char *names[] = {"RED", "YELLOW", "GREEN"};
+
+    for (color = RED; color <= GREEN; color++) {
+        printf("%s=%d\n", names[color], color);
+    }
+
+    return 0;
+}
