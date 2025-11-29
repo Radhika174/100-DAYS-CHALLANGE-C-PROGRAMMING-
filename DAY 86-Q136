@@ -1,0 +1,43 @@
+#include <stdio.h>
+#include <string.h>
+
+enum Menu {
+    ADD,
+    SUBTRACT,
+    MULTIPLY
+};
+
+int main() {
+    char operation[15];
+    int a, b;
+    enum Menu choice;
+
+    scanf("%s %d %d", operation, &a, &b);
+
+  
+    if (strcmp(operation, "ADD") == 0)
+        choice = ADD;
+    else if (strcmp(operation, "SUBTRACT") == 0)
+        choice = SUBTRACT;
+    else if (strcmp(operation, "MULTIPLY") == 0)
+        choice = MULTIPLY;
+    else {
+        printf("Invalid Operation\n");
+        return 0;
+    }
+
+    
+    switch (choice) {
+        case ADD:
+            printf("%d\n", a + b);
+            break;
+        case SUBTRACT:
+            printf("%d\n", a - b);
+            break;
+        case MULTIPLY:
+            printf("%d\n", a * b);
+            break;
+    }
+
+    return 0;
+}
