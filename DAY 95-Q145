@@ -1,0 +1,58 @@
+Q145: Return a structure containing top student's details from a function.
+
+/*
+Sample Test Cases:
+Input 1:
+3 students: Riya 101 89, Karan 102 96, Meena 103 92
+Output 1:
+Top Student: Karan | Roll: 102 | Marks: 96
+
+*/
+#include <stdio.h>
+
+struct Student {
+    char name[50];
+    int roll_no;
+    float marks;
+};
+
+// Function to find and return the top student
+struct Student findTopper(struct Student students[], int n) {
+    int topIndex = 0;
+    for (int i = 1; i < n; i++) {
+        if (students[i].marks > students[topIndex].marks) {
+            topIndex = i;
+        }
+    }
+    return students[topIndex];
+}
+
+int main() {
+    int n;
+    printf("Enter number of students: ");
+    scanf("%d", &n);
+
+    struct Student students[n];
+
+    // Input student details
+    for (int i = 0; i < n; i++) {
+        printf("Enter details of student %d:\n", i + 1);
+
+        printf("Name: ");
+        scanf("%s", students[i].name);
+
+        printf("Roll Number: ");
+        scanf("%d", &students[i].roll_no);
+
+        printf("Marks: ");
+        scanf("%f", &students[i].marks);
+        printf("\n");
+    }
+
+    // Get top student
+    struct Student topStudent = findTopper(students, n);
+
+    printf("Top Student: %s | Roll: %d | Marks: %.0f\n", topStudent.name, topStudent.roll_no, topStudent.marks);
+
+    return 0;
+}
